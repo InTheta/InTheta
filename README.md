@@ -1,14 +1,31 @@
-# InTheta
+<p align="center">
+  <img src="https://avatars.githubusercontent.com/u/17220028?v=4" width="104" height="104" alt="Omni Redeemer">
+</p>
 
-I build tools for AI agents and market data. My public work focuses on how agents access data, use tools, and fit into developer workflows.
+<h1 align="center">Market data, trading systems &amp; AI agents</h1>
 
-## AI and developer tools
+<p align="center">
+  I build Omni Terminal and the tools around it, from decoding exchange data to defining what a trading agent is allowed to do.
+</p>
 
-- [Agent Capability Middleware](https://github.com/InTheta/agent-capability-middleware) provides an open SDK and reference profiles for user-controlled agent permissions, private context, and x402 policy flows.
-- [Omni Universe SDKs](https://github.com/InTheta/omni-universe-sdks) provides public SDKs, data examples, and guarded trading agent examples.
-- [Prime Agent with T3 Code](https://github.com/InTheta/t3code/pull/1) documents how to connect Prime Agent to local Ollama over ACP. The Windows test used Qwen to read a disposable file and verified that its checksum stayed the same. The guide merged into the integration branch on my T3 fork.
+<p align="center">
+  <a href="https://omniterminal.app/">Explore Omni Terminal</a> &nbsp;·&nbsp;
+  <a href="https://github.com/InTheta/omni-universe-sdks">Browse the SDKs</a> &nbsp;·&nbsp;
+  <a href="https://github.com/wboayue/rust-ibapi/pull/625">Read a merged Rust fix</a>
+</p>
 
-## Selected upstream contributions
+---
 
-- [DefiLlama dimension adapters](https://github.com/DefiLlama/dimension-adapters/pull/7627) added the Omni Terminal Hyperliquid builder adapter.
-- [rust-ibapi](https://github.com/wboayue/rust-ibapi/pull/625) fixed protobuf date decoding for historical daily bars.
+### Explore the code
+
+| If you're interested in… | Start here |
+| --- | --- |
+| **Market data and trading integrations** | [Omni Universe SDKs](https://github.com/InTheta/omni-universe-sdks) has public SDKs, market-data examples and guarded trading agent examples. |
+| **Agent permissions and payments** | [Agent Capability Middleware](https://github.com/InTheta/agent-capability-middleware) includes an SDK and reference profiles for user-controlled tool permissions, private context and x402 payment policies. |
+| **Onchain strategy vaults** | [HL Vault SDK](https://github.com/InTheta/hl-vault-sdk) is a TypeScript SDK for Hyperliquid, HIP-3 and HIP-4 strategy vaults. |
+
+### A closer look at three changes
+
+- **IBKR daily bars were landing in 1970.** The Rust protobuf decoder read an eight-digit trading date as Unix seconds. I added calendar-date handling and a regression test, then checked the result with live MU daily bars from IB Gateway. [Merged upstream · rust-ibapi #625](https://github.com/wboayue/rust-ibapi/pull/625)
+- **Omni needed an adapter for DefiLlama's Hyperliquid builder data.** I contributed the Omni Terminal builder adapter to the public dimension-adapters repository. [Merged upstream · DefiLlama #7627](https://github.com/DefiLlama/dimension-adapters/pull/7627)
+- **A local model needed a way into T3 Code.** I documented Prime Agent over ACP with Ollama and checked on Windows that Qwen could read a disposable file while its checksum stayed the same. [Merged on my integration branch · t3code #1](https://github.com/InTheta/t3code/pull/1)
