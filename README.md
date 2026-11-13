@@ -16,6 +16,10 @@
 
 ---
 
+### Featured · Symphony
+
+I work on agent orchestration with [OpenAI Symphony](https://github.com/openai/symphony). In my public Elixir fork, I added a durable per-issue token ledger so usage totals can survive an orchestrator restart. [Read the implementation](https://github.com/InTheta/symphony/commit/46b7b9120beb648b78629fa75bab02a516e1c189)
+
 ### Explore the code
 
 | If you're interested in… | Start here |
@@ -24,8 +28,10 @@
 | **Agent permissions and payments** | [Agent Capability Middleware](https://github.com/InTheta/agent-capability-middleware) includes an SDK and reference profiles for user-controlled tool permissions, private context and x402 payment policies. |
 | **Onchain strategy vaults** | [HL Vault SDK](https://github.com/InTheta/hl-vault-sdk) is a TypeScript SDK for Hyperliquid, HIP-3 and HIP-4 strategy vaults. |
 
-### A closer look at three changes
+### A closer look at upstream and fork contributions
 
 - **IBKR daily bars were landing in 1970.** The Rust protobuf decoder read an eight-digit trading date as Unix seconds. I added calendar-date handling and a regression test, then checked the result with live MU daily bars from IB Gateway. [Merged upstream · rust-ibapi #625](https://github.com/wboayue/rust-ibapi/pull/625)
 - **Omni needed an adapter for DefiLlama's Hyperliquid builder data.** I contributed the Omni Terminal builder adapter to the public dimension-adapters repository. [Merged upstream · DefiLlama #7627](https://github.com/DefiLlama/dimension-adapters/pull/7627)
 - **A local model needed a way into T3 Code.** I documented Prime Agent over ACP with Ollama and checked on Windows that Qwen could read a disposable file while its checksum stayed the same. [Merged on my integration branch · t3code #1](https://github.com/InTheta/t3code/pull/1)
+- **Deribit options and combo support in C#.** I contributed nullable Greeks, option and instrument types, and fixes for combo parsing and nullable trade data. [DeriSock #27](https://github.com/psollberger/DeriSock/pull/27) · [DeriSock #44](https://github.com/psollberger/DeriSock/pull/44)
+- **Binance futures funding in C#.** I added the futures funding stream to the WebSocket client. [Merged upstream](https://github.com/Marfusios/binance-client-websocket/pull/1)
