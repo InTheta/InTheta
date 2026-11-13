@@ -20,10 +20,15 @@
 
 ![T3 Code connects to Ollama via Prime Agent over ACP. Symphony records per-issue token usage in a persistent ledger.](./assets/agent-orchestration.svg)
 
-| Project | What I worked on |
-| --- | --- |
-| [T3 Code + Prime Agent](https://github.com/InTheta/t3code/tree/integration/prime-acp-base) | Documented Prime Agent as a local ACP provider backed by Ollama. On Windows, Qwen read a disposable file and its checksum stayed the same. Also added validation for explicit MCP launch model options. [Setup and verification](https://github.com/InTheta/t3code/pull/1) · [Model validation](https://github.com/InTheta/t3code/pull/2) |
-| [Symphony](https://github.com/InTheta/symphony) | Added persistence for per-issue token usage in my Elixir fork so totals can survive an orchestrator restart. [Implementation](https://github.com/InTheta/symphony/commit/46b7b9120beb648b78629fa75bab02a516e1c189) |
+#### T3 Code + Prime Agent · TypeScript
+
+I documented how to run Prime Agent as a local ACP provider backed by Ollama. In a Windows smoke test, Qwen read a disposable file and its checksum stayed the same. [Integration branch](https://github.com/InTheta/t3code/tree/integration/prime-acp-base) · [Setup and smoke test](https://github.com/InTheta/t3code/pull/1)
+
+I also added opt-in validation for explicit MCP launch options. For example, a Codex launch with a Claude-only effort option fails before creating a thread. Both affected MCP suites passed all 87 tests, and server type checking passed. [Merged in my fork](https://github.com/InTheta/t3code/pull/2)
+
+#### Symphony · Elixir
+
+I added a durable per-issue token ledger in my Symphony fork so usage totals can survive an orchestrator restart. The change includes ledger and orchestrator status tests. [Implementation and tests](https://github.com/InTheta/symphony/commit/46b7b9120beb648b78629fa75bab02a516e1c189) · [Token accounting design](https://github.com/InTheta/symphony/blob/46b7b9120beb648b78629fa75bab02a516e1c189/elixir/docs/token_accounting.md)
 
 ### Explore the code
 
@@ -33,7 +38,7 @@
 | **Agent permissions and payments** | [Agent Capability Middleware](https://github.com/InTheta/agent-capability-middleware) includes an SDK and reference profiles for user-controlled tool permissions, private context and x402 payment policies. |
 | **Onchain strategy vaults** | [HL Vault SDK](https://github.com/InTheta/hl-vault-sdk) is a TypeScript SDK for Hyperliquid, HIP-3 and HIP-4 strategy vaults. |
 
-### A closer look at upstream and fork contributions
+### Merged upstream contributions
 
 - **IBKR daily bars were landing in 1970.** The Rust protobuf decoder read an eight-digit trading date as Unix seconds. I added calendar-date handling and a regression test, then checked the result with live MU daily bars from IB Gateway. [Merged upstream · rust-ibapi #625](https://github.com/wboayue/rust-ibapi/pull/625)
 - **Omni needed an adapter for DefiLlama's Hyperliquid builder data.** I contributed the Omni Terminal builder adapter to the public dimension-adapters repository. [Merged upstream · DefiLlama #7627](https://github.com/DefiLlama/dimension-adapters/pull/7627)
