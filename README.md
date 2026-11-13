@@ -2,10 +2,10 @@
   <img src="https://raw.githubusercontent.com/InTheta/InTheta/main/assets/omni-christo.png" width="104" height="104" alt="Omni Redeemer">
 </p>
 
-<h1 align="center">AI agent orchestration &amp; trading systems</h1>
+<h1 align="center">I build agent tooling and trading systems</h1>
 
 <p align="center">
-  I build agent tooling and trading systems. My current focus is running local agents through T3 Code and making Symphony runs easier to operate and measure.
+  I’m working on local model integration in T3 Code and run accounting in Symphony. I also build Omni Terminal and its market data tooling.
 </p>
 
 <p align="center">
@@ -17,6 +17,8 @@
 ---
 
 ### Agent orchestration
+
+![T3 Code connects to Ollama via Prime Agent over ACP. Symphony records per-issue token usage in a persistent ledger.](./assets/agent-orchestration.svg)
 
 | Project | What I worked on |
 | --- | --- |
