@@ -28,10 +28,6 @@ I also added opt-in validation for explicit MCP launch options. For example, a C
 
 #### Symphony · Elixir
 
-![Omni Symphony read-only dashboard header](./assets/symphony-dashboard.png)
-
-*Omni Symphony’s read-only dashboard brings tracker tasks and native worker activity into one view. Screenshot cropped to the dashboard header.*
-
 I added a durable per-issue token ledger in my Symphony fork so usage totals can survive an orchestrator restart. The change includes ledger and orchestrator status tests. [Implementation and tests](https://github.com/InTheta/symphony/commit/46b7b9120beb648b78629fa75bab02a516e1c189) · [Token accounting design](https://github.com/InTheta/symphony/blob/46b7b9120beb648b78629fa75bab02a516e1c189/elixir/docs/token_accounting.md)
 
 ### Explore the code
