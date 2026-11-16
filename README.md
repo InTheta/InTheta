@@ -38,6 +38,11 @@ I added a durable per-issue token ledger in my Symphony fork so usage totals can
 | **Agent permissions and payments** | [Agent Capability Middleware](https://github.com/InTheta/agent-capability-middleware) includes an SDK and reference profiles for user-controlled tool permissions, private context and x402 payment policies. |
 | **Onchain strategy vaults** | [HL Vault SDK](https://github.com/InTheta/hl-vault-sdk) is a TypeScript SDK for Hyperliquid, HIP-3 and HIP-4 strategy vaults. |
 
+### Options research on Substack
+
+- 📝 [Building an Options RL Trading System That Doesn't Learn the Wrong Game](https://omniterminal.substack.com/p/building-an-options-rl-trading-system?r=8n9982). How I built a crypto options simulator for reinforcement learning, constrained the policy to feasible trades, and scaled reward terms so one input wouldn't dominate training.
+- 📈 [Replacing IV Interpolation With a Point-in-Time Neural Pricer](https://omniterminal.substack.com/p/replacing-iv-interpolation-with-a?r=8n9982). How I replaced repeated volatility-surface interpolation with batched neural IV estimates, using point-in-time training data and analytical guardrails to reprice historical options portfolios.
+
 ### Merged upstream contributions
 
 - **IBKR daily bars were landing in 1970.** The Rust protobuf decoder read an eight-digit trading date as Unix seconds. I added calendar-date handling and a regression test, then checked the result with live MU daily bars from IB Gateway. [Merged upstream · rust-ibapi #625](https://github.com/wboayue/rust-ibapi/pull/625)
